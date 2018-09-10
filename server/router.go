@@ -1,0 +1,32 @@
+package server
+
+import (
+	"github.com/gin-gonic/gin"
+	"github.com/NewbieCoder99/go-night-framework/controllers"
+	"github.com/foolin/gin-template"
+)
+
+func NewRouter() *gin.Engine {
+
+	router := gin.New()
+	router.Use(gin.Logger())
+	router.Use(gin.Recovery())
+
+	router.Static("/css", "resources/assets/css")
+	// router.LoadHTMLGlob("resources/views/*")
+
+	//new template engine
+	router.HTMLRender = gintemplate.New(gintemplate.TemplateConfig{
+		Root:      "resources/views",
+		Extension: ".html",
+		Master:    "layouts/master",
+		// Partials:  []string{"partials/*"},
+		DisableCache: false,
+	})
+
+	// Make Route Here
+	Wel := new(controllers.WelComeController)
+	router.GET("/", Wel.Welcome)
+
+	return router
+}
