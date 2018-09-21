@@ -1,0 +1,9 @@
+{
+	"packages" : [
+		"github.com/joho/godotenv",
+		"github.com/gin-gonic/gin",
+		"github.com/foolin/gin-template",
+		"github.com/spf13/viper",
+		"github.com/go-sql-driver/mysql"
+	]
+}

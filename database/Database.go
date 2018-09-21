@@ -25,6 +25,7 @@ func Init() {
 	db_name := os.Getenv("DB_DATABASE")
 
 	db, err = sql.Open("mysql", db_username +":" + db_password + "@tcp(" + db_host + ")/" + db_name)
+
 	if err != nil {
 		log.Fatalln(err)
 	}

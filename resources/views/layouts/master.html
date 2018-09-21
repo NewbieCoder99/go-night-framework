@@ -2,12 +2,10 @@
 <html>
     <head>
         <title>{{.title}}</title>
-        <style type="text/css" media="screen">
-        	@import url("/css/app.css");
-        </style>
+        <link type="text/css" rel="stylesheet" href="./css/app.css">
     </head>
     <body>
-        {{block "head" .}}
+        {{block "head" .}} 
             Default head content! (master.html)
         {{end}}
         <hr>

@@ -12,8 +12,8 @@ func NewRouter() *gin.Engine {
 	router.Use(gin.Logger())
 	router.Use(gin.Recovery())
 
-	router.Static("/css", "resources/assets/css")
-	// router.LoadHTMLGlob("resources/views/*")
+	router.Static("css", "resources/assets/css")
+	router.Static("js", "resources/assets/js")
 
 	//new template engine
 	router.HTMLRender = gintemplate.New(gintemplate.TemplateConfig{
