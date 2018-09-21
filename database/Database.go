@@ -20,11 +20,12 @@ func Init() {
 	}
 
 	db_host 	:= os.Getenv("DB_HOST")
+	db_driver 	:= os.Getenv("DB_DRIVER")
 	db_username := os.Getenv("DB_USERNAME")
 	db_password := os.Getenv("DB_PASSWORD")
 	db_name 	:= os.Getenv("DB_DATABASE")
 
-	db, err = sql.Open("mysql", db_username +":" + db_password + "@tcp(" + db_host + ")/" + db_name)
+	db, err = sql.Open(db_driver, db_username +":" + db_password + "@tcp(" + db_host + ")/" + db_name)
 
 	if err != nil {
 		log.Fatalln(err)
