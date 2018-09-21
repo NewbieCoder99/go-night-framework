@@ -2,7 +2,7 @@
 * @Author: Newbie Coder
 * @Date:   2018-09-20 10:09:43
 * @Last Modified by:   Newbie Coder
-* @Last Modified time: 2018-09-22 00:04:54
+* @Last Modified time: 2018-09-22 00:17:02
 */
 package main
 
@@ -23,6 +23,7 @@ func main() {
 	JsonFile, err := os.Open("packages.json");
 
 	defer JsonFile.Close()
+
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -30,10 +31,12 @@ func main() {
 	jsonParser := json.NewDecoder(JsonFile)
 	jsonParser.Decode(&pkgs)
 
+	fmt.Println("Installing repositories with package information")
+
 	for i := 0; i < len(pkgs.Packages); i++ {
 		fmt.Println("Installing package",pkgs.Packages[i],"...")
-		cmd := exec.Command("go","get",pkgs.Packages[i])
-		fmt.Println("Installing successfully")
+		cmd := exec.Command("go","get","-u",pkgs.Packages[i])
+		fmt.Println("Install successfully")
 		cmd.Run()
 	}
 }

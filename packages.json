@@ -1,9 +1,12 @@
 {
 	"packages" : [
+		"github.com/pressly/goose/cmd/goose",
 		"github.com/joho/godotenv",
 		"github.com/gin-gonic/gin",
 		"github.com/foolin/gin-template",
 		"github.com/spf13/viper",
-		"github.com/go-sql-driver/mysql"
+		"github.com/go-sql-driver/mysql",
+		"cloud.google.com/go/datastore",
+		"github.com/RevenueMonster/goloquent"
 	]
 }
