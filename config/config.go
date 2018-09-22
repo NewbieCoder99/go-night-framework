@@ -2,7 +2,7 @@
 * @Author: Newbie Coder
 * @Date:   2018-09-20 10:09:43
 * @Last Modified by:   Newbie Coder
-* @Last Modified time: 2018-09-22 07:34:35
+* @Last Modified time: 2018-09-22 09:45:07
 */
 package config
 
@@ -21,7 +21,7 @@ func Init() {
 	var err error
 	config = viper.New()
 	// config.SetConfigType("yaml")
-	config.SetConfigName("development")
+	config.SetConfigName("test")
 	config.AddConfigPath("../config/")
 	config.AddConfigPath("config/")
 	err = config.ReadInConfig()
