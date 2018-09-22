@@ -9,3 +9,7 @@ Copy file .env.example to root folder your project, rename to .env
 
 # Running Web Server
 	go run main.go
+
+# Screenshoot
+
+![Alt text](resources/assets/img/screenshoot.png?raw=true "Screenshoot" )
