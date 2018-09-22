@@ -2,7 +2,7 @@
 * @Author: Newbie Coder
 * @Date:   2018-09-20 10:09:43
 * @Last Modified by:   Newbie Coder
-* @Last Modified time: 2018-09-22 10:09:38
+* @Last Modified time: 2018-09-22 10:42:12
 */
 package server
 
@@ -27,7 +27,7 @@ func NewRouter() *gin.Engine {
 		Root		: "resources/views",
 		Extension 	: ".html",
 		Master 		: "layouts/master",
-		// Partials 	: []string{"partials/.html"},
+		// Partials 	: []string{"partials/*"},
 		DisableCache: false,
 	})
 
