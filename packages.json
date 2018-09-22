@@ -8,5 +8,6 @@
 		"github.com/go-sql-driver/mysql",
 		"cloud.google.com/go/datastore",
 		"github.com/RevenueMonster/goloquent"
+		"github.com/gin-gonic/gin/binding"
 	]
 }

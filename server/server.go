@@ -1,13 +1,20 @@
+/*
+* @Author: Newbie Coder
+* @Date:   2018-09-20 10:09:43
+* @Last Modified by:   Newbie Coder
+* @Last Modified time: 2018-09-22 07:35:30
+*/
 package server
 
 import(
-	"github.com/NewbieCoder99/go-night-framework/config"
-	"github.com/joho/godotenv"
 	"os"
 	"log"
+	"github.com/NewbieCoder99/go-night-framework/config"
+	"github.com/joho/godotenv"
 )
 
 func Init() {
+
 	config.GetConfig()
 	router := NewRouter()
 
