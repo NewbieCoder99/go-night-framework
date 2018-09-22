@@ -9,6 +9,7 @@
 		"cloud.google.com/go/datastore",
 		"github.com/RevenueMonster/goloquent",
 		"github.com/gin-gonic/gin/binding",
-		"github.com/utrack/gin-csrf"
+		"github.com/utrack/gin-csrf",
+		"github.com/thedevsaddam/govalidator"
 	]
 }
