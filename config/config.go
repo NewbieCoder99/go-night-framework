@@ -2,7 +2,7 @@
 * @Author: Newbie Coder
 * @Date:   2018-09-20 10:09:43
 * @Last Modified by:   Newbie Coder
-* @Last Modified time: 2018-09-22 13:34:01
+* @Last Modified time: 2018-09-23 01:44:05
 */
 package config
 
@@ -36,11 +36,38 @@ func GetMode() {
 	gin.SetMode(os.Getenv("GIN_MODE"))
 }
 
-func BaseUrl() (string) {
+func DBConf(driver string) string {
 	err := godotenv.Load()
-		if err != nil { log.Fatal("Error loading .env file") }
-	base_url := os.Getenv("BASE_URL")
-	port := os.Getenv("HOST_PORT")
+
+	if err != nil {
+		log.Fatal("Error open .env file")
+	}
+
+	db_driver 	:= os.Getenv("DB_DRIVER")
+	db_username := os.Getenv("DB_USERNAME")
+	db_password := os.Getenv("DB_PASSWORD")
+	db_name 	:= os.Getenv("DB_DATABASE")
+
+	if driver == "setup" {
+		if db_driver == "mysql" {
+			return db_username +":"+ db_password +"@/" + db_name + "?charset=utf8&parseTime=True&loc=Local"
+		}
+	}
+
+	return db_driver
+}
+
+func BaseUrl() (string) {
+
+	err := godotenv.Load()
+
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
+	base_url 	:= os.Getenv("BASE_URL")
+	port 		:= os.Getenv("HOST_PORT")
+
 	return base_url+":"+port+"/"
 }
 

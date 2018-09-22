@@ -6,10 +6,10 @@
 		"github.com/foolin/gin-template",
 		"github.com/spf13/viper",
 		"github.com/go-sql-driver/mysql",
-		"cloud.google.com/go/datastore",
-		"github.com/RevenueMonster/goloquent",
+		"github.com/jinzhu/gorm",
 		"github.com/gin-gonic/gin/binding",
 		"github.com/utrack/gin-csrf",
-		"github.com/thedevsaddam/govalidator"
+		"github.com/thedevsaddam/govalidator",
+		"github.com/heroku/go-getting-started"
 	]
 }
