@@ -7,6 +7,7 @@
 		"github.com/spf13/viper",
 		"github.com/go-sql-driver/mysql",
 		"github.com/jinzhu/gorm",
+		"github.com/jinzhu/gorm/dialects/mysql",
 		"github.com/gin-gonic/gin/binding",
 		"github.com/utrack/gin-csrf",
 		"github.com/thedevsaddam/govalidator",
