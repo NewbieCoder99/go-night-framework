@@ -1,0 +1,59 @@
+{{ define "content" }}
+	<div style="padding-bottom: 50px;"></div>
+	<div class="row">
+		<div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+			<center>
+				<h3><b>REGISTER ACCOUNT</b></h3>
+			</center>
+			<form id="form_register" method="post">
+				<div class="row">
+					<div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+						<div class="form-group">
+						  <label for="name">Name</label>
+						  <input type="text" name="name" class="form-control" id="name" autocomplete="off">
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+						<div class="form-group">
+						  <label for="email">Email</label>
+						  <input type="text" name="email" class="form-control" id="email" autocomplete="off">
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+						<div class="form-group">
+						  <label for="password">Password</label>
+						  <input type="password" name="password" class="form-control" id="password" autocomplete="off">
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+						<div class="form-group">
+						  <label for="passconf">Password Confirmation</label>
+						  <input type="passconf" name="passconf" class="form-control" id="passconf" autocomplete="off">
+						</div>
+					</div>
+				</div>
+				<button type="button" class="btn btn-primary btn-block register-btn">
+					Submit
+				</button>
+			</form>
+		</div>
+	</div>
+	<div style="padding-bottom: 50px;"></div>
+{{ end }}
+
+{{ define "scripts" }}
+	<script type="text/javascript">
+		$(document.body).on('click','.register-btn', function(e)
+		{
+			$.ajax({
+			  type: 'post',
+			  url : base_url('register'),
+			  data: serializer(e, '#form_register'),
+			  dataType: 'html',
+			  success: function(res) {
+			  	console.log(res)
+			  }
+			});
+		})
+	</script>
+{{ end }}

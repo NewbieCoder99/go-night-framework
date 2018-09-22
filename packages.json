@@ -7,7 +7,8 @@
 		"github.com/spf13/viper",
 		"github.com/go-sql-driver/mysql",
 		"cloud.google.com/go/datastore",
-		"github.com/RevenueMonster/goloquent"
-		"github.com/gin-gonic/gin/binding"
+		"github.com/RevenueMonster/goloquent",
+		"github.com/gin-gonic/gin/binding",
+		"github.com/utrack/gin-csrf"
 	]
 }

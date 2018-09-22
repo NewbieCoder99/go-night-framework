@@ -2,7 +2,7 @@
 * @Author: Newbie Coder
 * @Date:   2018-09-20 10:09:43
 * @Last Modified by:   Newbie Coder
-* @Last Modified time: 2018-09-22 09:45:07
+* @Last Modified time: 2018-09-22 13:34:01
 */
 package config
 
@@ -33,8 +33,15 @@ func Init() {
 func GetMode() {
 	err := godotenv.Load()
 		if err != nil { log.Fatal("Error loading .env file") }
-	 // Set from .env to "release" or "debug" 
 	gin.SetMode(os.Getenv("GIN_MODE"))
+}
+
+func BaseUrl() (string) {
+	err := godotenv.Load()
+		if err != nil { log.Fatal("Error loading .env file") }
+	base_url := os.Getenv("BASE_URL")
+	port := os.Getenv("HOST_PORT")
+	return base_url+":"+port+"/"
 }
 
 func relativePath(basedir string, path *string) {
